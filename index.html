@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InfotroX FTC Hub</title>
+
+<!-- ICONS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0f2a5c, #020617);
+    color: white;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    letter-spacing: 1px;
+}
+
+header p {
+    opacity: 0.7;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover,
+nav button.active {
+    background: #3b82f6;
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+/* CONTENT BOX */
+.content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* SECTIONS */
+.section {
+    display: none;
+    animation: fade 0.4s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+/* HERO BOX */
+.hero {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(59,130,246,0.5);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #3b82f6;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+}
+
+/* ANIMATION */
+@keyframes fade {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>InfotroX FTC Hub 🤖</h1>
+    <p>Platformă pentru voluntari FTC</p>
+</header>
+
+<nav>
+    <button onclick="show('home')" class="active"><i class="fas fa-home"></i> Acasă</button>
+    <button onclick="show('lectii')"><i class="fas fa-book"></i> Lecții</button>
+    <button onclick="show('materiale')"><i class="fas fa-folder"></i> Materiale</button>
+    <button onclick="show('contact')"><i class="fas fa-envelope"></i> Contact</button>
+</nav>
+
+<div class="content">
+
+<!-- HOME -->
+<div id="home" class="section active">
+    <div class="hero">
+        <h2>Bine ai venit 👋</h2>
+        <p>Aici găsești lecții, materiale și resurse pentru FTC.</p>
+    </div>
+</div>
+
+<!-- LECTII -->
+<div id="lectii" class="section">
+    <h2>Lecții</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Lecția 1</h3>
+            <p>Introducere în FTC</p>
+            <a href="lectia1.html" class="btn">Deschide</a>
+        </div>
+
+        <div class="card">
+            <h3>Lecția 2</h3>
+            <p>Programare Java</p>
+            <a href="lectia2.html" class="btn">Deschide</a>
+        </div>
+
+        <div class="card">
+            <h3>Lecția 3</h3>
+            <p>Construcție robot</p>
+            <a href="lectia3.html" class="btn">Deschide</a>
+        </div>
+    </div>
+</div>
+
+<!-- MATERIALE -->
+<div id="materiale" class="section">
+    <h2>Materiale</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Manual FTC</h3>
+            <a href="https://ftc-resources.firstinspires.org/ftc/game/manual" class="btn">Descarcă</a>
+        </div>
+
+        <div class="card">
+            <h3>GitHub Cod</h3>
+            <a href="https://pedropathing.com/docs/pathing/installation" target="_blank" class="btn">Vezi</a>
+        </div>
+
+        <div class="card">
+            <h3>Video Tutorial</h3>
+            <a href="https://www.youtube.com/@BroganMPratt" target="_blank" class="btn">Urmărește</a>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+    <div class="hero">
+        <h2>Contact</h2>
+        <p>Email: infotrox@email.com</p>
+    </div>
+</div>
+
+</div>
+
+<footer>
+    © 2026 InfotroX
+</footer>
+
+<script>
+function show(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
